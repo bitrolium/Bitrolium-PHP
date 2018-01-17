@@ -88,7 +88,7 @@ function CreateAccountAutoPassword($token)
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://bitrolium.net/api/app/CreateAccount",
+        CURLOPT_URL => "https://bitrolium.net/api/app/CreateAccountWithPassPhrase",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
