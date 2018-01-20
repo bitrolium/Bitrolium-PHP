@@ -119,17 +119,18 @@ function CreateAccount($token, $password)
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://bitrolium.net/api/app/CreateAccount/" . $password,
+        CURLOPT_URL => "https://bitrolium.net/api/app/CreateAccount" ,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "PassPhrase=" . $password,
+        CURLOPT_POSTFIELDS =>"{\"Password\":\"" .$password ."\"}",
         CURLOPT_HTTPHEADER => array(
             "Authorization: Bearer " . $token,
             "Cache-Control: no-cache",
+            "Content-Type: application/json",
 
         ),
     ));
